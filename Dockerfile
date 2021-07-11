@@ -38,8 +38,8 @@ RUN dotnet tool install dotnet-sonarscanner --tool-path . --version $SONAR_SCANN
 RUN apt-get -y install gnupg2 \
     && wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add - \
     && echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.4.list \
-    && sudo apt-get update -y \
-    && sudo apt-get install -y mongodb-org
+    && apt-get update -y \
+    && apt-get install -y mongodb-org
 
 # Cleanup
 RUN apt-get -q -y autoremove \
