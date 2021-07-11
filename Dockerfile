@@ -41,6 +41,8 @@ RUN apt-get -y install gnupg2 \
     && apt-get update -y \
     && apt-get install -y mongodb-org
 
+RUN which mongod && mongod --version
+
 # Cleanup
 RUN apt-get -q -y autoremove \
     && apt-get -q clean -y \
