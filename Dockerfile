@@ -27,6 +27,7 @@ RUN mkdir -p /usr/share/man/man1
 RUN apt-get update -y \
     && apt-get install --no-install-recommends -y apt-transport-https \
     && apt-get update -y \
+    && apt-get install -y mongodb-org \
     && apt-get install --no-install-recommends -y aspnetcore-runtime-$DOTNETCORE_RUNTIME_VERSION
 
 # Install Java Runtime for SonarScanner
